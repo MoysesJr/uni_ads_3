@@ -1,0 +1,302 @@
+/*TIPOGRAFIA
+
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+
+CORES:
+Cinza Logo - títulos: #a9a9a9
+Azul topo-logo-botoes: #1e90ff
+
+*/
+
+*{
+    font-size: 16px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 200%;
+    color: #a9a9a9;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif, cursive;
+    text-align: center;
+    font-size: 170%;
+    font-weight: 500;
+    color: #636363;
+}
+
+h3,h4 {
+    font-family: 'Montserrat', sans-serif, cursive;
+    font-size: 120%;
+    color: #a9a9a9;
+}
+
+h5 {
+    font-family: 'Montserrat', sans-serif, cursive;
+    text-align: center;
+    font-size: 110%;
+    font-weight: 500;
+    color: black;
+}
+
+h6 {
+    font-family: 'Montserrat', sans-serif, cursive;
+    text-align: center;
+    font-size: 80%;
+    font-weight: 400;
+    color: white;
+}
+
+
+h2::after {
+    display: block;
+    background-color: #1e90ff;
+    height: 1px;
+    width: 200px;
+    margin: 20px auto 80px;
+    content: " ";
+}
+
+p,li,a {
+    font-family: 'Open Sans', sans-serif;
+    color: #a9a9a9;
+    text-decoration: none;
+    list-style: none;
+}
+
+p.destaque {
+    font-size: 115%;
+    line-height: 1.8;
+}
+
+a.link:hover {
+    color: #1e90ff;
+}
+
+
+
+.botoes {
+    display: inline-block;
+    font-size: 110%;
+    color: white;
+    text-decoration: none;
+    font-weight:500;
+
+    margin-top: 30px;
+    padding: 10px 50px;
+    border-radius: 5px;
+
+    background: linear-gradient(rgba(153,228,237,1) 0%, rgba(103,203,248,1) 50%, rgba(30,144,255,1) 100% );
+}
+
+.botoes:hover {
+    font-size: 110%;
+    font-weight:500;
+    margin-top: 30px;
+    padding: 10px 50px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    background: linear-gradient(rgb(128, 211, 250) 0%, rgb(93, 172, 209) 50%, rgb(45, 147, 250) 100% );
+}
+
+
+
+
+/*-----------------------------*/
+/*         BANNER HEADER       */
+/*-----------------------------*/
+
+.h6-topo {
+    padding: 0px 10px 0px 5px;
+}
+
+
+
+/*-----------------------*/
+/*     HEADER NAV        */
+/*-----------------------*/
+#menu-principal li a  {
+    list-style: none;
+    display: block;
+}
+
+.fa-circle-user {
+    font-size: 35px;
+    padding: 0px 10px;
+    text-align: center;
+    color:#1e90ff;
+    transition: 1s;
+}
+
+.fa-circle-user:hover {
+    color: #a9a9a9;
+}
+
+/*---------------------*/
+/*    HEADER CHAMADA   */
+/*---------------------*/
+
+#chamada-box-esquerda h1 {
+    color:white;
+    font-weight: 400;
+    font-size: 230%;
+    text-transform: uppercase;
+}
+
+#chamada-box-esquerda h4 {
+    color:white;
+    padding: 20px 0px;
+    font-weight: 500;
+    font-size: 130%;
+}
+
+
+/*-----------------------*/
+/* SECTION APRESENTACAO */
+/*-----------------------*/
+#pontos-chave-esquerda h4 {
+    width: 100%;
+    color: white;
+    font-size: 180%;
+    font-weight: 400;
+    align-self: center;
+    text-align: center;
+}
+
+#pontos-chave-direita p {
+    color: white;
+    text-align: justify;
+}
+
+.espaco-botao a {
+    justify-content: center;
+    align-content: center;
+}
+/*----------------------*/
+/* SECTION SEGUIMENTOS  */
+/*-----------------------*/
+
+#seguimentos-wrap ul li p {
+    text-align: center;
+}
+
+
+#seguimentos-esquerda i {
+    font-size: 50px;
+    color: grey;
+    opacity: 0.5;
+    margin-top: 75px;
+
+}
+
+#seguimentos-direita i {
+    font-size: 50px;
+    color: grey;
+    float: right;
+    margin-top: 75px;
+}
+
+
+/*----------------------*/
+/* SECTION PARCEIROS    */
+/*-----------------------*/
+
+
+
+
+/*----------------------*/
+/*   SECTION CULTURA    */
+/*-----------------------*/
+#cultura-lado-esquerdo h5 {
+    font-size: 130%;
+    font-weight: 500;
+    color: #636363;
+}
+
+#cultura-lado-esquerdo p {
+    text-align: left;
+    color:#636363;
+}
+
+
+#cultura-lado-direito p {
+   padding-right: 20px;
+   text-align: jus;
+}
+
+#botao-cultura {
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    float: left;
+}
+
+/*-----------------*/
+/*      FOOTER     */
+/*-----------------*/
+.titulos-footer {
+    color: #a9a9a9;
+    text-align: center;
+    font-size: 120%;
+    font-weight: 500;
+
+}
+
+a.link-footer,.conteudo-footer {
+    font-size: 90%;
+    text-align: center;
+    color: rgb(202, 202, 202)
+
+}
+
+a.link-footer:hover {
+    color: #1e90ff;
+}
+
+#link-footer {
+    margin-right: 20px;
+}
+
+.fa-handshake {
+	font-size: 40px;
+    color: #1e90ff;
+}
+
+.fa-handshake:hover {
+    color:#a9a9a9;
+    cursor: pointer;
+}
+
+#linkedin-footer {
+    font-size: 30px;
+    color:white;
+    margin-top: 3px;
+}
+
+#linkedin-footer:hover{
+    color:#a9a9a9;
+    cursor: pointer;
+}
+
+#instagram-footer {
+    padding: 0px 10px;
+    font-size: 30px;
+    color:white;
+    margin-top: 3px;
+}
+
+#instagram-footer:hover {
+    color:#a9a9a9;
+    cursor: pointer;
+}
+
+
+
+
+
+/*---END PG INIT---*/
+
+
