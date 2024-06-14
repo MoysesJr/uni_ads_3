@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="">
+<?php
+include 'config.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $telefone = $_POST['telefone'];
+    $endereco = $_POST['endereco'];
+    $email = $_POST['email'];
+    $data_nascimento = $_POST['data_nascimento'];
+    $genero = $_POST['genero'];
+
+    $sql = "INSERT INTO clientes (nome, telefone, endereco, email, data_nascimento, genero)
+    VALUES ('$nome', '$telefone', '$endereco', '$email', '$data_nascimento', '$genero')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Novo cliente criado com sucesso!";
+    } else {
+        echo "Erro: " . $sql . "<br>" . $conn->error;
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
 <head>
+    <title>Adicionar Cliente</title>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Alpha Tech Sistemas</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -22,12 +43,9 @@
     <link rel="stylesheet" href="estilos/layout-mobile.css" media="screen and (min-width:300px) and (max-width:812px)">
 
 </head>
-
 <body>
 
-    <div id="teste"></div>
- 
-        <section class="banner-header-topo">
+<section class="banner-header-topo">
                 <div id="phone-topo-mestre">
                     <i class="fa-solid fa-phone"></i>
                     <h6 class="h6-topo">(32) 99195-1263</h6>
@@ -47,155 +65,47 @@
                 </div>
                 <div id="div-nav-menu-direita">
                     <ul id="menu-principal">
-                        <li><a class="link" href="#">Home</a></li>
+                        <li><a class="link" href=index.html>Home</a></li>
                         <li><a class="link" href="#">Soluções</a></li>
                         <li><a class="link" href="#">Suporte</a></li>
-                        <li><a class="link" href="#">Contato</a></li>                      
+                        <li><a class="link" href=central_cliente>Central do Cliente</a></li>
+                        <li><a class="link" href="#">Contato</a></li>
                     </ul>
                     <div id="nav-user">
-                        <a id="user" href=clientes.php><i class="fa-solid fa-circle-user"></i></i></a>
+                        <a id="user" href=cliente.html><i class="fa-solid fa-circle-user"></i></i></a>
                     </div>
                 </div>
             </nav>
         </section>
-    <header>
-        <section id="chamada">
-            <div id="chamada-mestre"> 
-                <div id="chamada-box-esquerda"> 
-                    <h1>Procurando uma solução completa para gestão da sua empresa?</h1>
-                    <h4>Temos a solução ideal!</h4>
-                    <a class="botoes" href="#">Confira</a>
-                </div>
-                <div id="chamada-box-direita">
-                </div>
-            </div>
-        </section>
-    </header>
-    <section class="titulos">
-            <div id="apresentacao-ancora-ats">
-                <h2>Alpha Tech Sistemas, a solução ideal para o seu negócio!</h2>
-            </div>
-    </section>
 
-    <section id="apresentacao-pontos-chave-conteudo">    
-        <div id="pontos-chave-mestre"> 
-            <div id="pontos-chave-esquerda">
-                    <h4>Quem Somos</h4> 
-                </div>
-
-            <div id="pontos-chave-direita">
-                <p class="destaque">
-                    A Alpha Tech Sistemas é uma assessoria especializada no atendimento às empresas do
-                    comércio, atacado e varejo, food service, prestadores de serviços, distribuidoras e
-                    indústrias. Com a prática de longa vivência nestas áreas, a empresa se diferencia por
-                    levar aos clientes informações sólidas e meios eficientes para geração de dados, que
-                    auxiliam nas tomadas de decisões diárias.
-                </p>
-            </div>
-        </div>
+    <h2>Adicionar Cliente</h2>
+    <form method="post" action="">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
         
-        <div class="espaco-botao">
-            <a class="botoes" id="botao-apresentacao" href="#">Conheça a Alpha Tech</a>
-        </div>
-    </section> 
-
-    <section class="titulos">
-        <h2>Seguimentos que atendemos</h2>
-    </section>
-            
-    <section id="seguimentos-atendidos-conteudo">
-            <div id="seguimentos-mestre">
-                <div id="seguimentos-esquerda">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div id="seguimentos-centro">
-                    <div id="seguimentos">
-                        <ul>
-                            <li><a href=""><img src="/imagens/icone-varejo.png"></a></li>
-                            <li><a class="link" href="#"><p>Pequenas Empresas</p></a></li>
-                        </ul>
-
-                        <ul>
-                            <li><a href=""><img src="imagens/icone-rede-de-lojas.png"></a></li>
-                            <li><a class="link" href="#"><p>Rede de Lojas</p></a></li>
-                        </ul>
-
-                        <ul>
-                            <li><a href=""><img src="imagens/icone-food.png"></a></li>
-                            <li><a class="link" href="#"><p>Food Services</p></a></li>
-                        </ul>
-
-                        <ul>
-                            <li><a href=""><img src="imagens/icone-servicos.png"></a></li>
-                            <li><a class="link" href="#"><p>Auto Centers</p></a></li>
-                        </ul>
-
-                        <ul>
-                            <li><a href=""><img src="imagens/icone-distribuidora.png"></a></li>
-                            <li><a class="link" href="#"><p>Distribuidoras</p></a></li>
-                        </ul>
-
-                        <ul>
-                            <li><a href=""><img src="imagens/icone-industria.png"></a></li>
-                            <li><a class="link" href="#"><p>Indústrias</p></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="seguimentos-direita">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-            </div>
-            <div class="espaco-botao">
-                <a id="botao-seguimentos" class="botoes" href="#">Saiba Mais</a>
-            </div>
-    </section>
-
-    <section class="titulos">
-        <h2>Parceiros que representamos</h2>
-    </section>
-
-    <section id="parceiros-conteudo">
-        <div id="parceiros-centro">
-            <ul>
-                <li><a href="#"><img class="parceiros-img" src="imagens/logo Gdoor.png" alt="gdoor"></a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><img class="parceiros-img" src="imagens/logo Arpa.png"  alt="arpa"></a></li>
-            </ul>   
-            <ul>    
-                <li><a href="#"><img class="parceiros-img" src="imagens/Logo visão.png" alt="visao"></a></li>    
-            </ul>
-        </div>
-    </section>
-    
-    <section class="titulos">
-        <h2>Cultura Alpha Tech Sistemas</h2>
-    </section>
-
-    <section id="cultura-conteudo">
-        <div id="cultura-mestre">
-            <div id="cultura-lado-esquerdo">
-                <img src="imagens/foto-moyses-diretor-alphatechsistemas.png" alt="foto">
-                <h5>Moyses Junior</h5>
-                <p strong> Diretor Comercial</p>
-            </div>
-            
-            <div id="cultura-lado-direito">
-                <p class="destaque">
-                    “A busca pela excelência em todas as ações na empresa, é o que nos motiva. A soma contínua e
-                    diária de esforços é o que move a Alpha Tech Sistemas na direção do que os clientes esperam de
-                    nós”.
-                </p>
-                <div class="space-div"></div>
-                <div class="espaco-botao">
-                    <a id="botao-cultura" class="botoes" href="#">Conheça nossa cultura</a>
-                </div>
-            </div>          
-        </div>
-       
-    </section>
+        <label for="telefone">Telefone:</label><br>
+        <input type="text" id="telefone" name="telefone"><br><br>
+        
+        <label for="endereco">Endereço:</label><br>
+        <input type="text" id="endereco" name="endereco"><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="data_nascimento">Data de Nascimento:</label><br>
+        <input type="date" id="data_nascimento" name="data_nascimento"><br><br>
+        
+        <label for="genero">Gênero:</label><br>
+        <select id="genero" name="genero">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+        </select><br><br>
+        
+        <input type="submit" value="Adicionar">
+    </form>
+    <a href="clientes.php">Voltar</a>
 </body>
-
 <footer>
         <div id="div-master-footer">
             <section id="informacoes-footer">
@@ -261,9 +171,10 @@
                 </div>
             </section>
         </div>
-</footer>
+    </footer>
+</html>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js" integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
@@ -273,3 +184,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   
     <script type="text/javascript">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"6f7739c18d41def8142fc69b47cce78edddb44694a480e271b8a4b3d9ea1882c6af51ace3bd48666749b66d6bc292ef1", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");</script>
+
+    <?php $conn->close(); ?>

@@ -1,2 +1,0 @@
-$("div#seguimentos-wrap").length;()
-

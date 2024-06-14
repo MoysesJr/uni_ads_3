@@ -125,11 +125,11 @@ a.link:hover {
 }
 
 #menu-principal li p {
-    margin-bottom: -10pc;
+    margin-bottom: -8pc;
 }
 .fa-circle-user {
-    font-size: 35px;
-    padding: 0px 10px;
+    font-size: 30px;
+    padding: 0px 30px;
     text-align: center;
     color:#1e90ff;
     transition: 1s;
