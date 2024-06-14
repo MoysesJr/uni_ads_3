@@ -1,0 +1,59 @@
+/*-----------------------*/
+/*  LISTA DE CLIENTES    */
+/*-----------------------*/
+#lista-clientes-master {
+    margin-bottom: 50px;
+}
+
+
+#lista-clientes-master a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+} 
+
+.formularios th {
+    font-size: 15px;
+}
+
+#lista-clientes .formularios a {
+    font-size: 30px;
+}
+
+#clientes-table th,td {
+    border: 2px solid grey;
+    padding: 10px;
+    text-align: left;
+}
+
+/*-----------------------*/
+/*  ADICIONAR CLIENTE    */
+/*-----------------------*/
+
+
+#adicionar-clientes{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#adicionar-clientes label{
+font-size: 18px;
+font-weight: 400;
+}
+
+
+/*-----------------------*/
+/*    EDITAR CLIENTE     */
+/*-----------------------*/
+
+#editar-cliente {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#editar-cliente label{
+    font-size: 18px;
+    font-weight: 400;
+}

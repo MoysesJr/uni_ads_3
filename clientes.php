@@ -10,25 +10,7 @@ $result = $conn->query($sql);
 
 <head>
     <title>Alpha Tech Sistemas</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-        }
-    </style>
-
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +25,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="estilos/Tipografia.css">
+    <link rel="stylesheet" href="estilos/layout-php.css">
     <link rel="stylesheet" href="estilos/layout-pagina-computador.css">
     <link rel="stylesheet" href="estilos/layout-mobile.css" media="screen and (min-width:300px) and (max-width:812px)">
 
@@ -82,8 +65,8 @@ $result = $conn->query($sql);
     </section>
 
     <h2>Lista de Clientes</h2>
-    <a href="create.php">Adicionar Cliente</a>
-    <section class = "clientes-master">
+    <section class="formularios" id="lista-clientes-master">
+        <a href="create.php">Adicionar Cliente</a>
         <table id="clientes-table">
             <tr>
                 <th>ID</th>
